@@ -1,14 +1,19 @@
 import SwiftUI
 
 struct StatsView: View {
+    @ObservedObject private var stats = StatsManager.shared
+
     var body: some View {
         List {
             Section("Статы") {
-                Text("Сила: 0")
-                Text("Мудрость: 0")
-                Text("Харизма: 0")
-                Text("Богатство: 0")
-                Text("Дух: 0")
+                ForEach(StatType.allCases, id: \.self) { stat in
+                    HStack {
+                        Text(stat.rawValue)
+                        Spacer()
+                        Text("\(stats.stats[stat, default: 0])")
+                            .foregroundStyle(.secondary)
+                    }
+                }
             }
         }
     }
