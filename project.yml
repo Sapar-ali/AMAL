@@ -1,0 +1,41 @@
+name: AMAL
+options:
+  minimumXcodeGenVersion: 2.31.0
+  deploymentTarget:
+    iOS: 16.0
+configs:
+  Debug: debug
+  Release: release
+targets:
+  AMAL:
+    type: application
+    platform: iOS
+    deploymentTarget: '16.0'
+    sources:
+      - path: AMAL/Sources
+      - path: AMAL/Resources
+        type: folder
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.amal
+        INFOPLIST_FILE: AMAL/Resources/Info.plist
+        SWIFT_VERSION: 6.0
+        TARGETED_DEVICE_FAMILY: 1
+        CURRENT_PROJECT_VERSION: 1
+        MARKETING_VERSION: 0.1.0
+        DEVELOPMENT_TEAM: ""
+    scheme:
+      testTargets: []
+    entitlements:
+      path: AMAL/Resources/AMAL.entitlements
+      properties:
+        com.apple.developer.healthkit: true
+        com.apple.developer.healthkit.access: [read]
+        com.apple.developer.healthkit.types:
+          - HKQuantityTypeIdentifierStepCount
+          - HKQuantityTypeIdentifierDistanceWalkingRunning
+          - HKQuantityTypeIdentifierActiveEnergyBurned
+          - HKCategoryTypeIdentifierMindfulSession
+          - HKCategoryTypeIdentifierSleepAnalysis
+          - HKQuantityTypeIdentifierBodyMass
+          - HKQuantityTypeIdentifierHeight

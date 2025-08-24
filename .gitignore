@@ -1,0 +1,16 @@
+# Xcode
+DerivedData/
+*.xcworkspace/
+xcuserdata/
+*.xcuserstate
+*.DS_Store
+# Build
+build/
+Build/
+# SwiftPM
+.swiftpm/
+.build/
+# Xcodegen
+AMAL.xcodeproj/
+# Secrets
+*.xcconfig
