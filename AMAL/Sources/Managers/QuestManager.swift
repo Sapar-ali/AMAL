@@ -1,5 +1,6 @@
 import Foundation
 
+@MainActor
 final class QuestManager: ObservableObject {
     static let shared = QuestManager()
     @Published private(set) var today: [Quest] = []

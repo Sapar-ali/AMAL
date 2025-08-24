@@ -1,5 +1,6 @@
 import Foundation
 
+@MainActor
 final class StatsManager: ObservableObject {
     static let shared = StatsManager()
     @Published private(set) var stats: [StatType: Int] = {

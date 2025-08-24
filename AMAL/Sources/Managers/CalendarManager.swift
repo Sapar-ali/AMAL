@@ -1,6 +1,7 @@
 import Foundation
 import EventKit
 
+@MainActor
 final class CalendarManager {
     static let shared = CalendarManager()
     private let store = EKEventStore()
